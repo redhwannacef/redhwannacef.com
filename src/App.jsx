@@ -1,16 +1,27 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  createMuiTheme,
+  CssBaseline,
+  Typography,
+  ThemeProvider,
+} from "@material-ui/core";
 
-const Home = () => <h1>Hello, world!</h1>;
-const About = () => <h1>Hello, from the about page!</h1>;
+const Home = () => <Typography>Hello, world!</Typography>;
+const About = () => <Typography>Hello, from the about page!</Typography>;
+
+const theme = createMuiTheme();
 
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
-  </BrowserRouter>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  </ThemeProvider>
 );
 
 export default App;
