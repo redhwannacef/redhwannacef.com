@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar";
 const About = () => (
   <>
     <Navbar />
-    <Container maxWidth="xl">
+    <Container maxWidth="md">
       <Typography>Hello, from the about page!</Typography>
     </Container>
   </>

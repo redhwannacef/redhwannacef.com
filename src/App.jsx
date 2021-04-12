@@ -5,6 +5,11 @@ import Home from "./pages/home";
 import About from "./pages/about";
 
 const theme = createMuiTheme({
+  palette: {
+    text: {
+      primary: "#222222",
+    },
+  },
   typography: {
     button: {
       textTransform: "inherit",

@@ -4,27 +4,34 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Link as RouterLink } from "react-router-dom";
-import { Link } from "@material-ui/core";
+import { Container, Link } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   toolbar: { justifyContent: "space-between" },
-}));
+});
 
 const Navbar = () => {
   const classes = useStyles();
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar className={classes.toolbar}>
-        <Link component={RouterLink} to="/" variant="h6" color="inherit">
-          Redhwan Nacef
-        </Link>
-        <nav>
-          <Button component={RouterLink} to="about">
-            About
-          </Button>
-        </nav>
-      </Toolbar>
+      <Container maxWidth="md">
+        <Toolbar className={classes.toolbar} disableGutters>
+          <Link
+            component={RouterLink}
+            to="/"
+            variant="h6"
+            style={{ color: "#bf616a" }}
+          >
+            <b>Redhwan Nacef</b>
+          </Link>
+          <nav>
+            <Button component={RouterLink} to="/about">
+              About
+            </Button>
+          </nav>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
