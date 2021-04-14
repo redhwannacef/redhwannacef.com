@@ -8,6 +8,7 @@ export const H4 = (props) => <Text variant="h4" {...props} />;
 export const H5 = (props) => <Text variant="h5" {...props} />;
 export const H6 = (props) => <Text variant="h6" {...props} />;
 export const P = (props) => <Text variant="body1" {...props} />;
+export const Span = (props) => <Text variant="inherit" {...props} />;
 
 const Text = ({ bold = false, children, ...props }) => (
   <Typography {...props}>{bold ? <b>{children}</b> : children}</Typography>

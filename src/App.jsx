@@ -1,11 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import {
+  createMuiTheme,
+  CssBaseline,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@material-ui/core";
 import Home from "./pages/home";
 import About from "./pages/about";
 
-const theme = createMuiTheme({
+const muiTheme = createMuiTheme({
   palette: {
+    primary: {
+      main: "#bf616a",
+    },
     text: {
       primary: "#222222",
     },
@@ -25,7 +33,14 @@ const theme = createMuiTheme({
       },
     },
   },
+  props: {
+    MuiButton: {
+      disableElevation: true,
+    },
+  },
 });
+
+const theme = responsiveFontSizes(muiTheme);
 
 const App = () => (
   <ThemeProvider theme={theme}>
