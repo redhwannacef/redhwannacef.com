@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Container, Grid } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
 import Link from "@material-ui/core/Link";
-import { H4 } from "../../components/Typography";
+import { H4, Span } from "../../components/Typography";
 import profile from "./profile.jpg";
+import { Link as RouterLink } from "react-router-dom";
 
 const Home = () => (
   <>
@@ -47,8 +48,16 @@ const Home = () => (
               .
             </H4>
           </div>
-          <Button variant="contained" color="primary" fullWidth>
-            Get in touch!
+          <Button
+            component={RouterLink}
+            to="/contact"
+            variant="contained"
+            color="primary"
+            fullWidth
+          >
+            <Span variant="h5" bold>
+              Get in touch!
+            </Span>
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} style={{ maxHeight: "320px" }}>

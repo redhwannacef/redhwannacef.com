@@ -26,8 +26,8 @@ const Navbar = () => {
             <b>Redhwan Nacef</b>
           </Link>
           <nav>
-            <Button component={RouterLink} to="/about">
-              About
+            <Button component={RouterLink} to="/contact">
+              Contact
             </Button>
           </nav>
         </Toolbar>
