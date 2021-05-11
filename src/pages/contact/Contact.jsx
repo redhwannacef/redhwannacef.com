@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Grid,
-  IconButton,
-  Snackbar,
-  Tooltip,
-} from "@material-ui/core";
+import { Container, IconButton, Snackbar, Tooltip } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
 import useUtilityStyles from "../../styles/utilities";
-import { H3, H4, H6 } from "../../components/Typography";
+import { H3, H4, P } from "../../components/Typography";
 import Button from "@material-ui/core/Button";
-import { FileCopy, GitHub, Twitter, YouTube } from "@material-ui/icons";
+import {
+  FileCopy,
+  GitHub,
+  LinkedIn,
+  Twitter,
+  YouTube,
+} from "@material-ui/icons";
 import { Alert } from "@material-ui/lab";
 import ClipboardJS from "clipboard";
 
@@ -34,14 +34,12 @@ const Contact = () => {
     <>
       <Navbar />
       <Container maxWidth="md" className={utilities.flexGrow}>
-        <Grid
-          container
-          direction="column"
-          className={`${utilities.heightFull} ${utilities.flow}`}
-          style={{ textAlign: "center", marginTop: "5rem" }}
+        <div
+          className={`${utilities.flow}`}
+          style={{ textAlign: "center", marginTop: "10rem" }}
         >
-          <H4>Feel free to email me</H4>
-          <Tooltip title={<H6>Copy</H6>} placement="top-end" arrow>
+          <H4>Feel free to email me at</H4>
+          <Tooltip title={<P bold>Copy</P>} placement="top-end" arrow>
             <Button
               id="button"
               variant="outlined"
@@ -55,32 +53,48 @@ const Contact = () => {
           </Tooltip>
           <H4>or find me on</H4>
           <div>
-            <IconButton
-              aria-label="twitter"
-              href="https://youtube.com/redhwannacef"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <YouTube fontSize="large" color="primary" />
-            </IconButton>
-            <IconButton
-              aria-label="twitter"
-              href="https://github.com/redhwannacef"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHub fontSize="large" color="primary" />
-            </IconButton>
-            <IconButton
-              aria-label="twitter"
-              href="https://twitter.com/redhwannacef"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Twitter fontSize="large" color="primary" />
-            </IconButton>
+            <Tooltip title="YouTube" placement="bottom">
+              <IconButton
+                aria-label="YouTube"
+                href="https://youtube.com/redhwannacef"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <YouTube fontSize="large" color="primary" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Github" placement="bottom">
+              <IconButton
+                aria-label="Github"
+                href="https://github.com/redhwannacef"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHub fontSize="large" color="primary" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Twitter" placement="bottom">
+              <IconButton
+                aria-label="Twitter"
+                href="https://twitter.com/redhwannacef"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter fontSize="large" color="primary" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="LinkedIn" placement="bottom">
+              <IconButton
+                aria-label="LinkedIn"
+                href="https://linkedin.com/in/redhwannacef"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedIn fontSize="large" color="primary" />
+              </IconButton>
+            </Tooltip>
           </div>
-        </Grid>
+        </div>
       </Container>
       <Snackbar
         open={copied}
