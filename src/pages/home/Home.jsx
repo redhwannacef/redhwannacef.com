@@ -60,7 +60,7 @@ const Home = () => (
             </Span>
           </Button>
         </Grid>
-        <Grid item xs={12} sm={6} style={{ maxHeight: "320px" }}>
+        <Grid item xs={12} sm={6} style={{ maxHeight: "333px" }}>
           <img
             src={profile}
             alt="Profile Picture"
