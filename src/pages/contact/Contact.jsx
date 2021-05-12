@@ -38,7 +38,7 @@ const Contact = () => {
           className={`${utilities.flow}`}
           style={{ textAlign: "center", marginTop: "10rem" }}
         >
-          <H4>Feel free to email me at</H4>
+          <P bold>Feel free to email me at</P>
           <Tooltip title={<P bold>Copy</P>} placement="top-end" arrow>
             <Button
               id="button"
@@ -46,12 +46,12 @@ const Contact = () => {
               color="primary"
               style={{ borderWidth: "medium" }}
             >
-              <H3 bold id="email">
-                helloredhwan@gmail.com <FileCopy fontSize="large" />
-              </H3>
+              <H4 bold id="email">
+                helloredhwan@gmail.com <FileCopy />
+              </H4>
             </Button>
           </Tooltip>
-          <H4>or find me on</H4>
+          <P bold>or find me on</P>
           <div>
             <Tooltip title="YouTube" placement="bottom">
               <IconButton

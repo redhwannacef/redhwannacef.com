@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Container, Grid } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
 import Link from "@material-ui/core/Link";
-import { H4, Span } from "../../components/Typography";
+import { H3, H4, Span } from "../../components/Typography";
 import profile from "./profile.jpg";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -19,9 +19,9 @@ const Home = () => (
           direction="column"
           justify="space-between"
         >
-          <H4 bold gutterBottom>
+          <H3 bold gutterBottom>
             Hello 👋🏼
-          </H4>
+          </H3>
           <H4 gutterBottom>I'm Redhwan.</H4>
           <div>
             <H4>
