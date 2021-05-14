@@ -17,12 +17,7 @@ const Navbar = () => {
     <AppBar position="static" color="transparent" elevation={0}>
       <Container maxWidth="md">
         <Toolbar className={classes.toolbar} disableGutters>
-          <Link
-            component={RouterLink}
-            to="/"
-            variant="h6"
-            style={{ color: "#bf616a" }}
-          >
+          <Link component={RouterLink} to="/" variant="h6" color="primary">
             <b>Redhwan Nacef</b>
           </Link>
           <nav>
