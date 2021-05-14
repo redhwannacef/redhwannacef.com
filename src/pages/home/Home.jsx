@@ -16,11 +16,10 @@ const useStyles = makeStyles({
   logos: {
     marginTop: "1rem",
     marginBottom: "1rem",
-    overflowX: "auto",
     textAlign: "center",
     "& svg,img": {
       maxHeight: 50,
-      maxWidth: 200,
+      maxWidth: 150,
     },
   },
 });
