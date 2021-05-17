@@ -14,6 +14,10 @@ export default responsiveFontSizes(
       button: {
         textTransform: "inherit",
       },
+      h2: {
+        fontWeight: 400,
+        fontSize: "2rem",
+      },
     },
     overrides: {
       MuiCssBaseline: {
@@ -25,9 +29,6 @@ export default responsiveFontSizes(
           "#root": {
             display: "flex",
             flexDirection: "column",
-          },
-          "strong, b": {
-            fontWeight: 500,
           },
         },
       },

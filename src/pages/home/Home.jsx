@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Container, Grid, makeStyles } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
 import Link from "@material-ui/core/Link";
-import { H3, H4, P } from "../../components/Typography";
+import { H2, P, Span } from "../../components/Typography";
 import profile from "./profile.jpg";
 import { Link as RouterLink } from "react-router-dom";
 import { grey } from "@material-ui/core/colors";
@@ -33,7 +33,6 @@ const useStyles = makeStyles({
     borderRadius: 12,
     padding: "0.5rem",
   },
-  projectFlow: { "& > * + *": { marginTop: "0.5rem" } },
 });
 
 const Home = () => {
@@ -60,13 +59,16 @@ const MainSection = () => {
           direction="column"
           justify="space-between"
           alignItems="flex-start"
+          role="heading"
         >
-          <H3 bold gutterBottom>
+          <Span variant="h3" bold gutterBottom>
             Hello 👋🏼
-          </H3>
-          <H4 gutterBottom>I'm Redhwan.</H4>
+          </Span>
+          <Span variant="h2" gutterBottom>
+            I'm Redhwan.
+          </Span>
           <div>
-            <H4>
+            <Span variant="h2">
               I am a{" "}
               <Link
                 href="https://github.com/redhwannacef"
@@ -76,8 +78,8 @@ const MainSection = () => {
               >
                 <b>Software Engineer</b>
               </Link>
-            </H4>
-            <H4 gutterBottom>
+            </Span>
+            <Span variant="h2" gutterBottom>
               and aspiring{" "}
               <Link
                 href="https://youtube.com/redhwannacef"
@@ -88,7 +90,7 @@ const MainSection = () => {
                 <b>YouTuber</b>
               </Link>
               .
-            </H4>
+            </Span>
           </div>
           <Button
             component={RouterLink}
@@ -123,9 +125,7 @@ const Companies = () => {
 
   return (
     <Container>
-      <P bold component="h2">
-        Companies I've worked with
-      </P>
+      <H2 bold>Notable clients</H2>
       <Grid
         container
         justify="space-around"
@@ -158,16 +158,14 @@ const Projects = () => {
 
   return (
     <Container>
-      <P bold component="h2">
-        Projects I've worked on
-      </P>
+      <H2 bold>Recent projects</H2>
       <Grid
         container
         justify="space-between"
         spacing={2}
         className={classes.projects}
       >
-        <Grid item xs={4} md={3} className={classes.projectFlow}>
+        <Grid item xs={4} md={3}>
           <Card style={{ padding: "0 0.5rem", backgroundColor: "inherit" }}>
             <img
               src={harryMackLogo}
@@ -175,16 +173,15 @@ const Projects = () => {
             />
           </Card>
           <Link
-            style={{ display: "block" }}
+            variant="body1"
+            style={{ display: "block", marginTop: "0.5rem" }}
             href="https://harrymackbars.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <b>harrymackbars.com</b>
           </Link>
-          <P variant="subtitle2" bold>
-            A Harry Mack search engine
-          </P>
+          <P variant="body2">A Harry Mack search engine</P>
         </Grid>
       </Grid>
     </Container>
