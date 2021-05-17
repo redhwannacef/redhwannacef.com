@@ -11,6 +11,7 @@ export default responsiveFontSizes(
       },
     },
     typography: {
+      fontFamily: ["Open Sans", "Helvetica", "Arial", "sans-serif"].join(","),
       button: {
         textTransform: "inherit",
       },
