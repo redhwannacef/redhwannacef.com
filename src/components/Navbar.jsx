@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <Container maxWidth="md">
+      <Container>
         <Toolbar className={classes.toolbar} disableGutters>
           <Link component={RouterLink} to="/" variant="h6" color="primary">
             <b>Redhwan Nacef</b>

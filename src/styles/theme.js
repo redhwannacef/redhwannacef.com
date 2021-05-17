@@ -31,10 +31,18 @@ export default responsiveFontSizes(
           },
         },
       },
+      MuiPaper: {
+        rounded: {
+          borderRadius: 12,
+        },
+      },
     },
     props: {
       MuiButton: {
         disableElevation: true,
+      },
+      MuiPaper: {
+        variant: "outlined",
       },
     },
   })

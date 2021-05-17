@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, IconButton, Snackbar, Tooltip } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
-import useUtilityStyles from "../../styles/utilities";
-import { H3, H4, P } from "../../components/Typography";
+import { useUtilityStyles } from "../../styles/utilities";
+import { H4, P } from "../../components/Typography";
 import Button from "@material-ui/core/Button";
 import {
   FileCopy,
@@ -13,6 +13,7 @@ import {
 } from "@material-ui/icons";
 import { Alert } from "@material-ui/lab";
 import ClipboardJS from "clipboard";
+import Flow from "../../components/Flow";
 
 const Contact = () => {
   const utilities = useUtilityStyles();
@@ -33,11 +34,8 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="md" className={utilities.flexGrow}>
-        <div
-          className={`${utilities.flow}`}
-          style={{ textAlign: "center", marginTop: "10rem" }}
-        >
+      <Container className={utilities.flexGrow}>
+        <Flow spacing={1} style={{ textAlign: "center", marginTop: "10rem" }}>
           <P bold>Feel free to email me at</P>
           <Tooltip title={<P bold>Copy</P>} placement="top-end" arrow>
             <Button
@@ -94,7 +92,7 @@ const Contact = () => {
               </IconButton>
             </Tooltip>
           </div>
-        </div>
+        </Flow>
       </Container>
       <Snackbar
         open={copied}
