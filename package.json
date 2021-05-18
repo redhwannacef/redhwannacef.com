@@ -28,7 +28,6 @@
   },
   "reactSnap": {
     "source": "dist",
-    "removeScriptTags": true,
     "include": [
       "/",
       "/contact"
