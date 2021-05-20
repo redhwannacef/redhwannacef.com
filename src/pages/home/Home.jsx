@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Container, Grid, makeStyles } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
 import Link from "@material-ui/core/Link";
-import { H2, P, Span } from "../../components/Typography";
+import { H3, P, Span } from "../../components/Typography";
 import profile from "./profile.jpg";
 import { Link as RouterLink } from "react-router-dom";
 import { grey } from "@material-ui/core/colors";
@@ -61,33 +61,35 @@ const MainSection = () => {
           alignItems="flex-start"
           role="heading"
         >
-          <Span variant="h3" bold gutterBottom>
+          <Span variant="h1" gutterBottom style={{ fontWeight: 700 }}>
             Hello 👋🏼
           </Span>
-          <Span variant="h2" gutterBottom>
+          <Span variant="h2" bold gutterBottom>
             I'm Redhwan.
           </Span>
           <div>
-            <Span variant="h2">
+            <Span variant="h2" bold>
               I am a{" "}
               <Link
                 href="https://github.com/redhwannacef"
                 color="primary"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ fontWeight: 700 }}
               >
-                <b>Software Engineer</b>
+                Software Engineer
               </Link>
             </Span>
-            <Span variant="h2" gutterBottom>
+            <Span variant="h2" bold gutterBottom>
               and aspiring{" "}
               <Link
                 href="https://youtube.com/redhwannacef"
                 color="primary"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ fontWeight: 700 }}
               >
-                <b>YouTuber</b>
+                YouTuber
               </Link>
               .
             </Span>
@@ -125,7 +127,7 @@ const Companies = () => {
 
   return (
     <Container>
-      <H2 bold>Notable clients</H2>
+      <H3 bold>Companies I have worked with</H3>
       <Grid
         container
         justify="space-around"
@@ -158,7 +160,7 @@ const Projects = () => {
 
   return (
     <Container>
-      <H2 bold>Recent projects</H2>
+      <H3 bold>Recent projects</H3>
       <Grid
         container
         justify="space-between"

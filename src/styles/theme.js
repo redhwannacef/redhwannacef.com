@@ -11,13 +11,19 @@ export default responsiveFontSizes(
       },
     },
     typography: {
+      fontWeightBold: 600,
       fontFamily: ["Open Sans", "Helvetica", "Arial", "sans-serif"].join(","),
       button: {
         textTransform: "inherit",
       },
+      h1: {
+        fontSize: "3rem",
+      },
       h2: {
-        fontWeight: 400,
         fontSize: "2rem",
+      },
+      h3: {
+        fontSize: "1.4rem",
       },
     },
     overrides: {
@@ -31,6 +37,11 @@ export default responsiveFontSizes(
             display: "flex",
             flexDirection: "column",
           },
+        },
+      },
+      MuiButton: {
+        root: {
+          borderRadius: 12,
         },
       },
       MuiPaper: {
