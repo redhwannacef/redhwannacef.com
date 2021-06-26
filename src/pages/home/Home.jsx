@@ -22,6 +22,7 @@ const useStyles = makeStyles({
   },
   projects: {
     marginTop: "0.5rem",
+    textAlign: "center"
   },
   projectImg: {
     border: `1px solid ${grey[300]}`,
@@ -163,12 +164,10 @@ const Projects = () => {
         className={classes.projects}
       >
         <Grid item xs={4} md={3}>
-          <Card style={{ padding: "0 0.5rem", backgroundColor: "inherit" }}>
-            <img
-              src={harryMackLogo}
-              style={{ maxWidth: "100%", filter: "invert(0.8)" }}
-            />
-          </Card>
+          <img
+            src={harryMackLogo}
+            style={{ maxWidth: "100%", filter: "invert(0.8)" }}
+          />
           <Link
             variant="body1"
             style={{ display: "block", marginTop: "0.5rem" }}
