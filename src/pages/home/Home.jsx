@@ -10,7 +10,7 @@ import { ReactComponent as GeLogo } from "./resources/ge-logo.svg";
 import { ReactComponent as SsLogo } from "./resources/ss-logo.svg";
 import { ReactComponent as ModulrLogo } from "./resources/modulr-logo.svg";
 import { ReactComponent as InsightsLogo } from "./resources/insights-logo.svg";
-import QsLogo from "./resources/qikserve_logo.png";
+import { ReactComponent as QsLogo } from "./resources/qikserve-logo.svg";
 import harryMackLogo from "./resources/harry-mack-logo.png";
 import { useUtilityStyles } from "../../styles/utilities";
 import Flow from "../../components/Flow";
@@ -18,12 +18,7 @@ import Flow from "../../components/Flow";
 const useStyles = makeStyles({
   logos: {
     marginTop: "0.5rem",
-    marginBottom: "1rem",
     textAlign: "center",
-    "& svg,img": {
-      maxHeight: 50,
-      maxWidth: 150,
-    },
   },
   projects: {
     marginTop: "0.5rem",
@@ -135,19 +130,19 @@ const Companies = () => {
         className={classes.logos}
       >
         {/* TODO: filter: greyscale then hover remove greyscale? */}
-        <Grid item xs={3} md="auto">
+        <Grid item>
           <GeLogo />
         </Grid>
-        <Grid item xs={6} md="auto">
+        <Grid item>
           <SsLogo />
         </Grid>
-        <Grid item xs={3} md="auto">
-          <img alt="QikServe" src={QsLogo} />
+        <Grid item>
+          <QsLogo />
         </Grid>
-        <Grid item xs={6} md="auto">
+        <Grid item>
           <ModulrLogo />
         </Grid>
-        <Grid item xs={6} md="auto">
+        <Grid item>
           <InsightsLogo />
         </Grid>
       </Grid>

@@ -30,7 +30,6 @@ export default responsiveFontSizes(
       MuiCssBaseline: {
         "@global": {
           "html,body,#root": {
-            height: "100%",
             minHeight: "100%",
           },
           "#root": {
