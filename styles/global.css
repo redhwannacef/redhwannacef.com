@@ -1,3 +1,16 @@
+:root {
+  --color-primary: #bf616a;
+  --text-primary: #2e3440;
+  --bg-primary: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #eceff4;
+    --bg-primary: #2e3440;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +46,7 @@
   }
 
   a {
-    @apply text-current;
+    @apply text-colorPrimary hover:underline;
   }
 
   :focus {

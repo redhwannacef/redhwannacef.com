@@ -40,7 +40,7 @@ const Document = ({
       <Meta />
       <Links />
     </head>
-    <body className="font-sans">
+    <body className="font-sans text-primary bg-primary">
       {children}
       {process.env.NODE_ENV === "development" && <LiveReload />}
     </body>
