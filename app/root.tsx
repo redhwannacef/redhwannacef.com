@@ -3,7 +3,6 @@ import type { LinksFunction, MetaFunction } from "remix";
 import { Links, LiveReload, Meta, useCatch } from "remix";
 import { Link, Outlet } from "react-router-dom";
 
-import resetStyles from "./styles/reset.css";
 import globalStyles from "./styles/global.css";
 
 export const meta: MetaFunction = () => ({ title: "Redhwan Nacef" });
@@ -23,7 +22,6 @@ export const links: LinksFunction = () => [
     type: "font/woff2",
     crossOrigin: "anonymous",
   },
-  { rel: "stylesheet", href: resetStyles },
   { rel: "stylesheet", href: globalStyles },
 ];
 
@@ -42,7 +40,7 @@ const Document = ({
       <Meta />
       <Links />
     </head>
-    <body>
+    <body className="font-sans">
       {children}
       {process.env.NODE_ENV === "development" && <LiveReload />}
     </body>
@@ -52,11 +50,13 @@ const Document = ({
 export default function App() {
   return (
     <Document>
-      <nav>
-        <h1>
-          <Link to="/">Redhwan Nacef</Link>
-        </h1>
-      </nav>
+      <header>
+        <nav className="py-4 text-center">
+          <h1>
+            <Link to="/">Redhwan Nacef</Link>
+          </h1>
+        </nav>
+      </header>
       <Outlet />
       <footer />
     </Document>

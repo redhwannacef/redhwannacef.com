@@ -5,12 +5,14 @@
   "license": "",
   "scripts": {
     "postinstall": "remix setup node",
-    "dev": "concurrently \"npm:dev:*\"",
-    "dev:remix": "remix watch",
+    "dev": "NODE_ENV=development concurrently \"npm:dev:*\"",
     "dev:functions": "cd server && tsc --watch",
+    "dev:styles": "postcss styles --base styles --dir app/styles -w",
     "dev:firebase": "firebase emulators:start",
-    "build": "remix build && npm run build:functions",
-    "build:functions": "cd server && tsc"
+    "dev:remix": "remix watch",
+    "build": "NODE_ENV=production npm run build:styles && remix build && npm run build:functions",
+    "build:functions": "cd server && tsc",
+    "build:styles": "postcss styles --base styles --dir app/styles --env production"
   },
   "dependencies": {
     "@remix-run/dev": "^0.21.0",
@@ -27,9 +29,13 @@
   "devDependencies": {
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "autoprefixer": "^10.4.0",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
     "firebase-tools": "^9.22.0",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19",
     "typescript": "^4.1.2"
   },
   "engines": {

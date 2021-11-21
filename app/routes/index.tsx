@@ -1,14 +1,6 @@
-import { LinksFunction } from "remix";
-
-import indexStyles from "../styles/index.css";
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: indexStyles },
-];
-
 export default function Index() {
   return (
-    <main>
+    <main className="text-center space-y-4">
       <p>
         Hello 👋🏼 I'm Redhwan. I am a{" "}
         <b>
@@ -21,25 +13,30 @@ export default function Index() {
           </a>
         </b>{" "}
         and aspiring{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://youtube.com/redhwannacef"
-        >
-          YouTuber
-        </a>
+        <b>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://youtube.com/redhwannacef"
+          >
+            YouTuber
+          </a>
+        </b>
         .
       </p>
       <p>
         Feel free to email me at{" "}
-        <a href="mailto:helloredhwan@gmail.com">helloredhwan@gmail.com</a>
+        <b>
+          <a href="mailto:helloredhwan@gmail.com">helloredhwan@gmail.com</a>
+        </b>
       </p>
       <p>or find me on</p>
-      <div className="socials">
+      <div className="inline-flex gap-4">
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://youtube.com/redhwannacef"
+          className="fill-current text-gray-500"
         >
           <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
             <title>YouTube</title>
@@ -50,6 +47,7 @@ export default function Index() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/redhwannacef"
+          className="fill-current text-gray-500"
         >
           <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
             <title>Github</title>
@@ -60,6 +58,7 @@ export default function Index() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/redhwannacef"
+          className="fill-current text-gray-500"
         >
           <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
             <title>Twitter</title>
@@ -70,6 +69,7 @@ export default function Index() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://linkedin.com/in/redhwannacef"
+          className="fill-current text-gray-500"
         >
           <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
             <title>LinkedIn</title>

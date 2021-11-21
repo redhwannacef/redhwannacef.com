@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans-SemiBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    @apply overflow-hidden pb-6 min-h-screen leading-normal;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2,
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  a {
+    @apply text-current;
+  }
+
+  :focus {
+    @apply outline-current;
+  }
+}
