@@ -1,4 +1,4 @@
-# Redhwan Nacefs' Peronal Site
+# Redhwan Nacefs' Personal Site
 
 Written in [Remix](https://docs.remix.run)
 
