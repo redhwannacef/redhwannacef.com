@@ -11,6 +11,7 @@ import {
 } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
+import darkStylesUrl from "~/styles/dark.css";
 
 export const meta: MetaFunction = () => ({ title: "Redhwan Nacef" });
 
@@ -30,6 +31,11 @@ export const links: LinksFunction = () => [
     crossOrigin: "anonymous",
   },
   { rel: "stylesheet", href: globalStylesUrl },
+  {
+    rel: "stylesheet",
+    href: darkStylesUrl,
+    media: "(prefers-color-scheme: dark)",
+  },
 ];
 
 export default function App() {
