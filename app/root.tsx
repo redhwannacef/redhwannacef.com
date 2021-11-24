@@ -1,9 +1,16 @@
-import type { ReactNode } from "react";
+import * as React from "react";
 import type { LinksFunction, MetaFunction } from "remix";
-import { Links, LiveReload, Meta, useCatch } from "remix";
-import { Link, Outlet } from "react-router-dom";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  useCatch,
+  Scripts,
+  Link,
+  Outlet,
+} from "remix";
 
-import globalStyles from "./styles/global.css";
+import globalStylesUrl from "~/styles/global.css";
 
 export const meta: MetaFunction = () => ({ title: "Redhwan Nacef" });
 
@@ -22,31 +29,8 @@ export const links: LinksFunction = () => [
     type: "font/woff2",
     crossOrigin: "anonymous",
   },
-  { rel: "stylesheet", href: globalStyles },
+  { rel: "stylesheet", href: globalStylesUrl },
 ];
-
-const Document = ({
-  children,
-  title,
-}: {
-  children: ReactNode;
-  title?: string;
-}) => (
-  <html lang="en">
-    <head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      <link rel="icon" href="/favicon.png" type="image/png" />
-      {title ? <title>{title}</title> : null}
-      <Meta />
-      <Links />
-    </head>
-    <body className="font-sans text-primary bg-primary">
-      {children}
-      {process.env.NODE_ENV === "development" && <LiveReload />}
-    </body>
-  </html>
-);
 
 export default function App() {
   return (
@@ -63,6 +47,30 @@ export default function App() {
     </Document>
   );
 }
+
+const Document = ({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title?: string;
+}) => (
+  <html lang="en">
+    <head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
+      <Meta />
+      {title ? <title>{title}</title> : null}
+      <Links />
+    </head>
+    <body className="font-sans text-primary bg-primary">
+      {children}
+      <Scripts />
+      {process.env.NODE_ENV === "development" && <LiveReload />}
+    </body>
+  </html>
+);
 
 export const CatchBoundary = () => {
   const caught = useCatch();
