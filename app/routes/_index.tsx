@@ -1,10 +1,14 @@
-export default function Index() {
+export default function Component() {
   return (
     <main className="text-center space-y-4">
       <p>
         Hello 👋🏼 I'm Redhwan. I am a{" "}
         <b>
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/redhwannacef">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/redhwannacef"
+          >
             Software Engineer
           </a>
         </b>{" "}

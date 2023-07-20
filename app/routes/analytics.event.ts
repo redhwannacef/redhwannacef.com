@@ -1,6 +1,7 @@
 import { getClientIPAddress } from "remix-utils";
+import type { ActionArgs } from "@remix-run/node";
 
-export async function action({ request }: { request: Request }) {
+export async function action({ request }: ActionArgs) {
   const ipAddress = getClientIPAddress(request.headers);
   const forwardedHeader = ipAddress ? { "X-Forwarded-For": ipAddress } : null;
 

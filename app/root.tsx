@@ -1,44 +1,48 @@
 import * as React from "react";
-import type { LinksFunction, MetaFunction } from "remix";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
-  useCatch,
-  Scripts,
-  Link,
   Outlet,
-} from "remix";
+  useRouteError,
+} from "@remix-run/react";
+import type { LinkDescriptor, V2_HtmlMetaDescriptor } from "@remix-run/node";
+import globalStyles from "~/styles/global.css";
+import darkStyles from "~/styles/dark.css";
+import tailwindStyles from "~/styles/tailwind.css";
 
-import globalStylesUrl from "~/styles/global.css";
-import darkStylesUrl from "~/styles/dark.css";
+export function meta(): V2_HtmlMetaDescriptor[] {
+  return [{ title: "Redhwan Nacef" }];
+}
 
-export const meta: MetaFunction = () => ({ title: "Redhwan Nacef" });
+export function links(): LinkDescriptor[] {
+  return [
+    {
+      rel: "preload",
+      as: "font",
+      href: "/fonts/OpenSans-Regular.woff2",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "preload",
+      as: "font",
+      href: "/fonts/OpenSans-SemiBold.woff2",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
+    { rel: "stylesheet", href: globalStyles },
+    {
+      rel: "stylesheet",
+      href: darkStyles,
+      media: "(prefers-color-scheme: dark)",
+    },
+    { rel: "stylesheet", href: tailwindStyles },
+  ];
+}
 
-export const links: LinksFunction = () => [
-  {
-    rel: "preload",
-    as: "font",
-    href: "/fonts/OpenSans-Regular.woff2",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "preload",
-    as: "font",
-    href: "/fonts/OpenSans-SemiBold.woff2",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  },
-  { rel: "stylesheet", href: globalStylesUrl },
-  {
-    rel: "stylesheet",
-    href: darkStylesUrl,
-    media: "(prefers-color-scheme: dark)",
-  },
-];
-
-export default function App() {
+export default function Component() {
   return (
     <Document>
       <header>
@@ -54,65 +58,40 @@ export default function App() {
   );
 }
 
-const Document = ({
-  children,
-  title,
-}: {
-  children: React.ReactNode;
-  title?: string;
-}) => (
-  <html lang="en">
-    <head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.png" type="image/png" />
-      <Meta />
-      {title ? <title>{title}</title> : null}
-      {process.env.NODE_ENV === "production" && (
-        <script
-          defer
-          data-domain="redhwannacef.com"
-          data-api="/analytics/event"
-          src="/analytics/event.js"
-        />
-      )}
-      <Links />
-    </head>
-    <body className="font-sans text-primary bg-primary">
-      {children}
-      <Scripts />
-      {process.env.NODE_ENV === "development" && <LiveReload />}
-    </body>
-  </html>
-);
-
-export const CatchBoundary = () => {
-  const caught = useCatch();
-
-  switch (caught.status) {
-    case 401:
-    case 404:
-      return (
-        <Document title={`${caught.status} ${caught.statusText}`}>
-          <p>This page doesn't exist</p>
-          <Link to="/">Back to home page</Link>
-        </Document>
-      );
-
-    default:
-      throw new Error(
-        `Unexpected caught response with status: ${caught.status}`
-      );
-  }
-};
-
-export const ErrorBoundary = ({ error }: { error: Error }) => {
+export function ErrorBoundary() {
+  const error = useRouteError();
   console.error(error);
 
   return (
-    <Document title="Uh-oh!">
-      <p>Oops, sorry something went wrong on my side.</p>
-      <Link to="/">Back to home page</Link>
+    <Document>
+      <p>Oops, something went wrong. Please refresh the page and try again.</p>
     </Document>
   );
-};
+}
+
+function Document({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <Meta />
+        <title>Redhwan Nacef</title>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            defer
+            data-domain="redhwannacef.com"
+            data-api="/analytics/event"
+            src="/analytics/event.js"
+          />
+        )}
+        <Links />
+      </head>
+      <body className="font-sans text-primary bg-primary">
+        {children}
+        {process.env.NODE_ENV === "development" && <LiveReload />}
+      </body>
+    </html>
+  );
+}

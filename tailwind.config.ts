@@ -1,8 +1,9 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
-module.exports = {
-  purge: ["./app/**/*.tsx", "./app/**/*.jsx", "./app/**/*.js", "./app/**/*.ts"],
-  darkMode: false,
+export default {
+  content: ["./app/**/*.{ts,tsx,jsx,js}"],
+
   theme: {
     extend: {
       textColor: {
@@ -20,6 +21,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [],
-};
+} satisfies Config;
