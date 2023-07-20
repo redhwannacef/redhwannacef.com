@@ -12,10 +12,6 @@ import globalStyles from "~/styles/global.css";
 import darkStyles from "~/styles/dark.css";
 import tailwindStyles from "~/styles/tailwind.css";
 
-export function meta(): V2_HtmlMetaDescriptor[] {
-  return [{ title: "Redhwan Nacef" }];
-}
-
 export function links(): LinkDescriptor[] {
   return [
     {
