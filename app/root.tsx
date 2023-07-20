@@ -68,6 +68,14 @@ const Document = ({
       <link rel="icon" href="/favicon.png" type="image/png" />
       <Meta />
       {title ? <title>{title}</title> : null}
+      {process.env.NODE_ENV === "production" && (
+        <script
+          defer
+          data-domain="redhwannacef.com"
+          data-api="/analytics/event"
+          src="/analytics/event.js"
+        />
+      )}
       <Links />
     </head>
     <body className="font-sans text-primary bg-primary">
