@@ -1,0 +1,73 @@
+:root {
+  --color-primary: #bf616a;
+  --text-primary: #2e3440;
+  --bg-primary: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #eceff4;
+    --bg-primary: #2e3440;
+  }
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+nav {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+main > * + * {
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: inline-flex;
+  gap: 1rem;
+  color: #6b7280;
+}
+
+.social-links a {
+  display: inline-flex;
+  color: inherit;
+}
+
+.social-links svg {
+  fill: currentColor;
+}

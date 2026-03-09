@@ -1,5 +1,3 @@
 # Redhwan Nacefs' Personal Site
 
-Written in [Remix](https://docs.remix.run)
-
-Run locally using `npm run dev`
+This site is served using a programming language I built from scratch called [zor](https://github.com/redhwannacef/zor).

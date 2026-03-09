@@ -1,0 +1,5 @@
+fun handler() {
+  return staticResponse("public");
+}
+
+serve(handler);
