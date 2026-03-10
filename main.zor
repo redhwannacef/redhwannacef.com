@@ -1,4 +1,6 @@
-fun handler() {
+fun handler(request) {
+  if (request.path == "/contact") return redirectResponse("/");
+
   return staticResponse("public");
 }
 
